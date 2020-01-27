@@ -7,19 +7,19 @@
 
     <fragment
         android:id="@+id/navigation_home"
-        android:name="com.example.mapsapp.ui.map.HomeFragment"
+        android:name="com.example.mapsapp.ui.map.MapFragment"
         android:label="@string/title_map"
         tools:layout="@layout/fragment_profile" />
 
     <fragment
         android:id="@+id/navigation_dashboard"
-        android:name="com.example.mapsapp.ui.profile.DashboardFragment"
+        android:name="com.example.mapsapp.ui.profile.ProfileFragment"
         android:label="@string/title_profile"
         tools:layout="@layout/fragment_map" />
 
     <fragment
         android:id="@+id/navigation_notifications"
-        android:name="com.example.mapsapp.ui.settings.NotificationsFragment"
+        android:name="com.example.mapsapp.ui.settings.SettingsFragment"
         android:label="@string/title_settings"
         tools:layout="@layout/fragment_settings" />
 </navigation>
