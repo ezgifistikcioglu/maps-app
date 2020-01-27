@@ -9,13 +9,13 @@
         android:id="@+id/navigation_home"
         android:name="com.example.mapsapp.ui.map.MapFragment"
         android:label="@string/title_map"
-        tools:layout="@layout/fragment_profile" />
+        tools:layout="@layout/fragment_map" />
 
     <fragment
         android:id="@+id/navigation_dashboard"
         android:name="com.example.mapsapp.ui.profile.ProfileFragment"
         android:label="@string/title_profile"
-        tools:layout="@layout/fragment_map" />
+        tools:layout="@layout/fragment_profile" />
 
     <fragment
         android:id="@+id/navigation_notifications"
