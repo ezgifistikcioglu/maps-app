@@ -3,4 +3,6 @@
     <string name="title_map">Map</string>
     <string name="title_profile">Profile</string>
     <string name="title_settings">Settings</string>
+    <string name="title_activity_maps">Map</string>
+    <string name="google_maps_key" templateMergeStrategy="preserve" translatable="false">AIzaSyBgySva8XSrzI6nGQoedJPtvYKXsGA0AsM</string>
 </resources>
