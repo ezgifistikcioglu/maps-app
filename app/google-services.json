@@ -15,31 +15,22 @@
       },
       "oauth_client": [
         {
-          "client_id": "256378044231-jlc9lorp4cd99g6slukk1k73tifa0j7n.apps.googleusercontent.com",
+          "client_id": "256378044231-1j8gb5k8nr2q6trlmh391vt2cr7lf5r8.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.example.mapsapp",
-            "certificate_hash": "9bf42e81bf22d8739b09252c216c14fffe8eead7"
+            "certificate_hash": "4e6599701abccb79b0680a3294b7d0f740baad4f"
           }
-        },
-        {
-          "client_id": "256378044231-k8i4jjc1v7mdf8amq4ncv9hh1ig8uspk.apps.googleusercontent.com",
-          "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyDwu9A54JIOoqcb3MdvqCVjcHSi7rJYggQ"
+          "current_key": "AIzaSyBgySva8XSrzI6nGQoedJPtvYKXsGA0AsM"
         }
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "256378044231-k8i4jjc1v7mdf8amq4ncv9hh1ig8uspk.apps.googleusercontent.com",
-              "client_type": 3
-            }
-          ]
+          "other_platform_oauth_client": []
         }
       }
     }
