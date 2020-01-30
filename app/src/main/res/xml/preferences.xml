@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
-    <EditTextPreference
-        android:layout_width="match_parent"
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <SeekBarPreference
+        app:iconSpaceReserved="false"
+        app:useSimpleSummaryProvider="true"
+        app:showSeekBarValue="true"
+        android:key="keyName"
+        android:title="Distance value for alerts:"
+        android:summary="(in meters)"
+        android:max="20"
         android:defaultValue="5"
-        android:inputType="number"
-        android:key="edit_text_preference_1"
-        android:selectAllOnFocus="true"
-        android:singleLine="true"
-        android:title="Enter alert distance (in meters)" />
+    />
 </PreferenceScreen>
