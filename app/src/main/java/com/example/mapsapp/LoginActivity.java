@@ -44,7 +44,11 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             return;
         }
 
-        Toast.makeText(getApplicationContext(), account.getDisplayName(), Toast.LENGTH_LONG).show();
+        Toast.makeText(getApplicationContext(), "Hoşgeldin "+account.getGivenName(), Toast.LENGTH_LONG).show();
+
+        Intent myIntent = new Intent(this, MainActivity.class);
+        myIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        startActivity(myIntent);
     }
 
     @Override
