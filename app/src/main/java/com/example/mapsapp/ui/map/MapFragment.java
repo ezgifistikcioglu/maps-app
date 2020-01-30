@@ -12,14 +12,10 @@ import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 
 import com.example.mapsapp.R;
-import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapView;
 import com.google.android.gms.maps.MapsInitializer;
 import com.google.android.gms.maps.OnMapReadyCallback;
-import com.google.android.gms.maps.model.CameraPosition;
-import com.google.android.gms.maps.model.LatLng;
-import com.google.android.gms.maps.model.MarkerOptions;
 
 public class MapFragment extends Fragment  {
 
@@ -30,13 +26,12 @@ public class MapFragment extends Fragment  {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_map, container, false);
 
-        //Check Permissions
-        checkAndRequestPermission();
-
         //Inıt Google Maps
         mMapView = rootView.findViewById(R.id.map);
         mMapView.onCreate(savedInstanceState);
         mMapView.onResume();
+
+
         try {
             MapsInitializer.initialize(getActivity().getApplicationContext());
         } catch (Exception e) {
@@ -80,11 +75,9 @@ public class MapFragment extends Fragment  {
 
     public void onMapReadyHandler(GoogleMap mMap) {
         googleMap = mMap;
-        //googleMap.setMyLocationEnabled(true);
-        LatLng sydney = new LatLng(-34, 151);
-        googleMap.addMarker(new MarkerOptions().position(sydney).title("Marker Title").snippet("Marker Description"));
-        CameraPosition cameraPosition = new CameraPosition.Builder().target(sydney).zoom(12).build();
-        googleMap.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
+
+        //Check Permissions
+        checkAndRequestPermission();
     }
 
     public void checkAndRequestPermission() {
@@ -92,13 +85,19 @@ public class MapFragment extends Fragment  {
         {
             requestPermissions(new String[] { Manifest.permission.ACCESS_FINE_LOCATION }, getTargetRequestCode());
         }
+        else
+        {
+            mapActions();
+        }
     }
 
     public void onRequestPermissionsResult(int requestCode, String permissions[], int[] grantResults) {
-        if(grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-        } else {
-            Toast.makeText(getActivity().getApplicationContext(), "izin verilmeli", Toast.LENGTH_LONG).show();
-            checkAndRequestPermission();
+        if(!(grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED)) {
+            Toast.makeText(getActivity().getApplicationContext(), "Konum izni verilmeli!", Toast.LENGTH_LONG).show();
         }
+        checkAndRequestPermission();
+    }
+
+    public void mapActions() {
     }
 }
