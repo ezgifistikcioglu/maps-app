@@ -5,7 +5,7 @@
         app:iconSpaceReserved="false"
         app:useSimpleSummaryProvider="true"
         app:showSeekBarValue="true"
-        android:key="keyName"
+        android:key="alert_distance"
         android:title="Distance value for alerts:"
         android:summary="(in meters)"
         android:max="20"
