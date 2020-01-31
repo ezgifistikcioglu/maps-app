@@ -40,6 +40,7 @@ public class MapFragment extends Fragment implements LocationListener  {
     boolean firstPositionUpdate = true;
     LatLng start_position = null;
     boolean toast_is_show = false;
+    LocationManager locationManager = null;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -70,16 +71,23 @@ public class MapFragment extends Fragment implements LocationListener  {
         return rootView;
     }
 
+    @SuppressLint("MissingPermission")
     @Override
     public void onResume() {
         super.onResume();
         mMapView.onResume();
+        if(locationManager!=null) {
+            locationManager.requestLocationUpdates(locationManager.NETWORK_PROVIDER, 1000, 1, this);
+        }
     }
 
     @Override
     public void onPause() {
         super.onPause();
         mMapView.onPause();
+        if(locationManager!=null) {
+            locationManager.removeUpdates(this);
+        }
     }
 
     @Override
@@ -132,7 +140,7 @@ public class MapFragment extends Fragment implements LocationListener  {
         marker.setVisible(false);
 
         //Current Location Subscription
-        LocationManager locationManager = (LocationManager) getActivity().getSystemService(Context.LOCATION_SERVICE);
+        locationManager = (LocationManager) getActivity().getSystemService(Context.LOCATION_SERVICE);
         locationManager.requestLocationUpdates(locationManager.NETWORK_PROVIDER, 1000, 1, this);
         Toast.makeText(getActivity().getApplicationContext(), "Konum bilginiz alınıyor!", Toast.LENGTH_LONG).show();
     }
